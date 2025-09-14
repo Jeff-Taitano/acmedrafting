@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ACME Technical Drafting</title>
+    <style>
+        body {
+            font-family: 'Courier New', Courier, monospace;
+            background-color: #000080; /* Navy Blue */
+            color: #C0C0C0; /* Silver/Light Gray */
+            padding: 20px;
+            margin: 0;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            border: 2px solid #C0C0C0;
+            padding: 20px;
+            background-color: #000000; /* Black for content area */
+        }
+
+        h1, h2 {
+            color: #00FF00; /* Neon Green */
+            text-align: center;
+            border-bottom: 2px dashed #C0C0C0;
+            padding-bottom: 10px;
+            margin-top: 0;
+        }
+
+        h2 {
+            border-bottom: 2px solid #C0C0C0;
+            padding-bottom: 5px;
+            font-size: 1.5em;
+        }
+
+        .nav-links {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .nav-links a {
+            color: #FFFF00; /* Yellow */
+            text-decoration: none;
+            padding: 0 15px;
+            font-weight: bold;
+        }
+
+        .nav-links a:hover {
+            color: #FF00FF; /* Magenta */
+            text-decoration: underline;
+        }
+
+        .page-content {
+            display: none;
+        }
+
+        ul {
+            list-style-type: square;
+            padding-left: 20px;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+
+        .email-link {
+            color: #FFFF00;
+        }
+        
+        /* Simple visitor counter mock-up */
+        .counter {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 0.9em;
+            color: #808080; /* Gray */
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>ACME Technical Drafting Solutions</h1>
+        
+        <div class="nav-links">
+            <a href="#" onclick="showPage('home-page');">Home</a> | 
+            <a href="#" onclick="showPage('about-page');">About Us</a> | 
+            <a href="#" onclick="showPage('contact-page');">Contact</a>
+        </div>
+
+        <div id="home-page" class="page-content">
+            <h2>Our Services</h2>
+            <p>Providing high-quality technical drafting services for a low-cost solution.</p>
+            <ul>
+                <li>Floor Plans</li>
+                <li>Site Plans and Plot Plans</li>
+                <li>Technical Drawings and Schematics</li>
+                <li>Architectural Drawings</li>
+                <li>As-Built Drawings</li>
+                <li>Basic CAD Design and Conversion</li>
+            </ul>
+        </div>
+
+        <div id="about-page" class="page-content">
+            <h2>About Us</h2>
+            <p>Welcome to ACME Technical Drafting Solutions, your partner in precision drawings. We specialize in creating clear and accurate technical drafting for a variety of needs. Our mission is to provide simple, reliable, and cost-effective solutions for all of your drafting requirements.</p>
+        </div>
+
+        <div id="contact-page" class="page-content">
+            <h2>Contact Us</h2>
+            <p>To request a quote or inquire about our services, please contact us via email:</p>
+            <p>Email: <a href="mailto:contact@acmedrafting.com" class="email-link">contact@acmedrafting.com</a></p>
+        </div>
+        
+        <div class="counter">
+            <p>You are visitor number <span id="visitor-count">14,234</span> since 1999.</p>
+        </div>
+    </div>
+
+    <script>
+        function showPage(pageId) {
+            // Hide all pages
+            const pages = document.querySelectorAll('.page-content');
+            pages.forEach(page => {
+                page.style.display = 'none';
+            });
+
+            // Show the selected page
+            const selectedPage = document.getElementById(pageId);
+            if (selectedPage) {
+                selectedPage.style.display = 'block';
+            }
+        }
+
+        // Show the home page when the page loads
+        document.addEventListener('DOMContentLoaded', () => {
+            showPage('home-page');
+        });
+    </script>
+
+</body>
+</html>
